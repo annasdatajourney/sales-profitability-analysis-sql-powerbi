@@ -1,30 +1,145 @@
-# Global Superstore – Business-led SQL Analysis (SQLite)
+# Sales & Profitability Analysis – SQL + Power BI
 
-This repo is designed as a **recruitment-style** SQL project: short, clean, and focused on **business questions** rather than “SQL tricks”.
+End-to-end business-focused analysis of global sales performance using **SQL** for data aggregation and **Power BI** for visual analytics.
 
-## What this project demonstrates
-- Translating business questions into SQL queries
-- Aggregations, grouping, filtering, bucketing
-- Basic profitability analysis (profit, margin)
-- Turning results into action-oriented insights
+The project demonstrates how raw transactional data can be transformed into actionable business insights, following a realistic analyst workflow.
+
+---
+
+## Project Overview
+
+This analysis focuses on answering key business questions at **market level**, including:
+
+- Which markets generate the highest sales?
+- Which markets are the most profitable?
+- How do discount strategies differ across regions?
+- How does shipping cost impact profitability?
+
+The workflow follows a clear sequence:
+**raw data → SQL aggregation → Power BI modelling → business insights**.
+
+---
 
 ## Dataset
-Global Superstore transactions dataset (CSV).
 
-## How to run (SQLite)
-1. Install **DB Browser for SQLite** (easy UI) or use `sqlite3`.
-2. Create a new database: `superstore.db`
-3. Run `00_create_table.sql`
-4. Import `global_superstore_clean.csv` into the `orders` table
-   - In DB Browser: *File → Import → Table from CSV*
-   - Make sure the target table is `orders`
-5. Run `01_analysis_queries.sql`
+The project is based on the **Global Superstore** dataset, a commonly used retail dataset available on Kaggle.
 
-## Files
-- `global_superstore_clean.csv` – cleaned CSV (ISO dates + standardised column names)
-- `00_create_table.sql` – table + indexes
-- `01_analysis_queries.sql` – the analysis queries
+- Source: Kaggle – Global Superstore Dataset
+- Original data contains transactional-level sales records across multiple global markets.
+- The dataset was cleaned and transformed before analysis.
+
+Files used in this project:
+- `Global_Superstore.csv` – original raw dataset
+- `global_superstore_clean.csv` – cleaned version used for analysis
+- `market_summary.csv` – market-level aggregated dataset created using SQL
+
+---
+
+## Tools Used
+
+- **SQL (MySQL)** – data aggregation and metric calculation  
+- **Power BI** – data modelling, measures, and dashboard creation  
+- **Excel / CSV** – source and intermediate datasets  
+
+---
+
+## Repository Structure
+
+```text
+sales-profitability-analysis-sql-powerbi/
+│
+├── data/
+│   ├── Global_Superstore.csv
+│   ├── global_superstore_clean.csv
+│   └── market_summary.csv
+│
+├── sql/
+│   ├── 00_create_table.sql
+│   └── 01_analysis_queries.sql
+│
+├── powerbi/
+│   ├── sales-profitability-analysis-sql-powerbi.pbix
+│   └── Theme.json
+│
+├── screenshots/
+│   ├── dashboard-overview.png
+│   ├── sql_market_level_aggregation.png
+│   ├── model_powerbi.png
+│   └── market_summary_table_powerbi.png
+│
+└── README.md
+```
+
+---
+
+## SQL Analysis
+
+SQL was used to aggregate transactional data into a **market-level summary table**.
+
+Key metrics calculated in SQL:
+- Total Sales
+- Total Profit
+- Profit Margin (%)
+- Average Discount (%)
+- Shipping Cost as % of Sales
+
+The final query groups data by market and prepares it for direct use in Power BI.
+
+Example output (market-level aggregation):
+
+| Market        | Total Sales | Total Profit | Profit Margin (%) | Avg Discount (%) | Shipping Cost (%) |
+|--------------|------------:|-------------:|------------------:|-----------------:|------------------:|
+| Asia Pacific | 800,511.75  | 125,049.47   | 15.62             | 8.56             | 15.61             |
+| Europe       | 503,568.21  | 89,122.08    | 17.70             | 8.75             | 16.37             |
+| LATAM        | 236,263.49  | 34,929.35    | 14.78             | 6.92             | 17.40             |
+| Africa       | 115,205.93  | 27,541.85    | 23.91             | 1.30             | 16.28             |
+| USCA         | 55,259.64   | 12,271.60    | 22.21             | 14.90            | 9.19              |
+
+---
+
+## Power BI Dashboard
+
+The aggregated dataset was imported into Power BI and modelled for analysis.
+
+The dashboard includes:
+
+- **Total Sales by Market**
+- **Profit Margin (%) by Market**
+- **Average Discount (%) by Market**
+- **Shipping Cost as % of Sales by Market**
+
+
+All visuals are built using SQL-derived metrics to ensure consistency and data accuracy.
+
+---
+
+### Dashboard Overview
+
+![Dashboard](screenshots/dashboard-overview.png)
+
+> Dashboard built in Power BI using SQL-aggregated market-level data.
+
+---
+
+## Key Business Insights
+
+- **Africa and USCA** achieve the highest profit margins despite lower sales volumes.
+- **Asia Pacific** leads in total sales but underperforms in profitability.
+- **USCA** maintains strong margins while applying aggressive discounting.
+- **LATAM** shows the highest shipping cost burden relative to sales, limiting profit potential.
+
+These insights highlight opportunities for margin optimisation and cost efficiency improvements.
+
+---
 
 ## Notes
-- Dates are stored as ISO text (`YYYY-MM-DD`) for portability.
-- This is intentionally **SQL-first** (no Python notebooks).
+
+- The project is designed in a **recruitment-style format**: clear, focused, and business-driven.
+- Emphasis is placed on **decision support**, not technical complexity.
+- All calculations are transparent and reproducible.
+
+---
+
+## Author
+
+Created as part of a professional data analytics portfolio to demonstrate SQL and Power BI skills in a real-world business context.
