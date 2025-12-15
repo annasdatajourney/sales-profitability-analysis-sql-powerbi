@@ -1,8 +1,14 @@
 # Sales & Profitability Analysis – SQL + Power BI
 
-End-to-end business-focused analysis of global sales performance using **SQL** for data aggregation and **Power BI** for visual analytics.
+This project demonstrates an end-to-end, business-led analytical workflow combining SQL as the calculation layer with Power BI for modelling and visual storytelling.
 
-The project demonstrates how raw transactional data can be transformed into actionable business insights, following a realistic analyst workflow.
+Using a transactional Global Superstore dataset, the analysis focuses on comparing sales performance, profitability, discounting behaviour, and shipping cost efficiency across global markets.
+
+The primary objective was to produce transparent, decision-ready metrics rather than visually dense or purely technical outputs.
+
+The dashboard highlights situations where high revenue does not translate into strong profit margins, as well as cases where operational costs or discount pressure significantly impact profitability.
+
+The final output is a concise, business-oriented report designed to support pricing, discount optimisation strategies, and logistics efficiency discussions for non-technical stakeholders.
 
 ---
 
