@@ -47,6 +47,18 @@ Files used in this project:
 - **Power BI** – data modelling, measures, and dashboard creation  
 - **Excel / CSV** – source and intermediate datasets  
 
+
+---
+
+## Skills Demonstrated
+
+- Writing analytical SQL queries for aggregation and KPI creation  
+- Designing end-to-end data pipelines (SQL → BI)  
+- Financial and profitability analysis  
+- Interpreting margin, cost, and discount structures  
+- Building decision-focused dashboards  
+- Translating technical outputs into business insights
+
 ---
 
 ## Repository Structure
@@ -146,6 +158,6 @@ These insights highlight opportunities for margin optimisation and cost efficien
 
 ---
 
-## Author
+## About This Project
+This project is part of my professional data analytics portfolio and demonstrates practical SQL and Power BI skills in a real-world business context.
 
-Created as part of a professional data analytics portfolio to demonstrate SQL and Power BI skills in a real-world business context.
