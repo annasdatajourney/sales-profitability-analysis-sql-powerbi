@@ -158,6 +158,16 @@ These insights highlight opportunities for margin optimisation and cost efficien
 
 ---
 
+
+## Deliverables
+
+- SQL scripts (aggregation and KPI calculations)
+- Power BI dashboard (.pbix)
+- Cleaned and aggregated datasets
+- Project documentation (README)
+
+---
+
 ## About This Project
 This project is part of my professional data analytics portfolio and demonstrates practical SQL and Power BI skills in a real-world business context.
 
